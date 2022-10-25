@@ -1,0 +1,137 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Acerca de {% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1>Acerca de</h1>
+<span class="subheading">
+    <a class="cv-download" href="{% static 'core/pdf/cv-AgustinGuarmes.pdf' %}" download="cv-AgustinGuarmes">
+      <i class="fa fa-download"></i> Currículum
+    </a>
+  </span>
+{% endblock %}
+
+{% block content %}
+<section>
+  <div class="row v-center">
+    <div class="col-md-3 h-center">
+        <img class="img-fluid avatar" src="{% static 'core/img/foto.jpg' %}" alt="foto">
+    </div>
+    <div class="col-md-9">
+        <h2>Agustín Alejandro Guarmes</h2>   
+        <p>Soy un desarrollador Full Stack de Rosario, Argentina. Capaz de asumir tareas de diferente índole, que abarca el desarrollo frontend y el backend comprendiendo conceptos de Interfaz de Usuario (UI) y Experiencia de Usuario (UX).</p>
+        <p>Realizo sitios web y aplicaciones web dinámicas, que pueden adaptarse a cualquier dispositivo.</p>
+        <p>En mi etapa final como estudiante universitario de ingeniería civil descubrí el pensamiento lógico algorítmico, el cual despertó mi interés en la utilización del mismo a fin de implementar soluciones tecnológicas en base a los lenguajes de programa.</p>
+    </div>
+  </div>
+</section>
+<hr>
+<section>
+  <div>   
+    <h3>Habilidades</h3>
+        <ul class="row">
+          <span class="language html">
+            <li>HTML</li>
+          </span>
+          <span class="language css">
+            <li>CSS</li>
+          </span>
+          <span class="language bootstrap">
+            <li>Bootstrap</li>
+          </span>
+          <span class="language py">
+            <li>Python</li>
+          </span>
+          <span class="language dj">
+            <li>Django</li>
+          </span>
+          <span class="language flask">
+            <li>Flask</li>
+          </span>
+          <span class="language java">
+            <li>Java</li>
+          </span>
+          <span class="language js">
+            <li>JavaScript</li>
+          </span>
+          <span class="language vue">
+            <li>Vue.js</li>
+          </span>
+          <span class="language react">
+            <li>React</li>
+          </span>
+          <span class="language node">
+            <li>Node.js</li>
+          </span>
+          <span class="language json">
+            <li>JSON</li>
+          </span>
+          <span class="language ruby">
+            <li>Ruby</li>
+          </span>
+          <span class="language mysql">
+            <li>MySQL</li>
+          </span>
+          <span class="language postgre">
+            <li>PostgreSQL</li>
+          </span>
+        </ul>
+      </div>
+</section>
+<hr>
+<section>
+  <div>
+    <h3>Cursos</h3>
+    <table class="table table-light">   <!--con extencion de bootstrap: b-table-header-->
+      <thead class="thead-light">
+          <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Organización</th>
+              <th>Certificado</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>Python Full Stack</td>
+            <td>12/2021</td>
+            <td>Agencia de Aprendizaje a lo largo de la vida</td>
+            <td class="h-center"><a href="{% static 'core/pdf/certificado-py-CaC.pdf' %}" target="_blank"><i class="fa fa-certificate certificate"></i></a></td>
+          </tr>
+          <tr>
+            <td>Programa básico multidisciplinario de formación en datos e inteligencia artificial</td>
+            <td>05/2022</td>
+            <td>UBA ILAB</td>
+            <td class="h-center"><a href="{% static 'core/pdf/certificate-ILAB.pdf' %}" target="_blank"><i class="fa fa-certificate certificate"></i></a></td>
+          </tr>
+          <tr>
+            <td>Introducción a los contenidos fundamentales de la programación</td>
+            <td>06/2022</td>
+            <td>Mumuki & i2T S.A.</td>
+            <td class="h-center"><a href="{% static 'core/pdf/certificado-mumuky.pdf' %}" target="_blank"><i class="fa fa-certificate certificate"></i></a></td>
+          </tr>
+          <tr>
+            <td>Profundización Django</td>
+            <td>En curso</td>
+            <td>Agencia de Aprendizaje a lo largo de la vida</td>
+            <td class="h-center">-</td>
+          </tr>
+          <tr>
+            <td>Programador Full Stack - Java</td>
+            <td>En curso</td>
+            <td>Egg</td>
+            <td class="h-center">-</td>
+          </tr>
+          <tr>
+            <td>Start Coding</td>
+            <td>En curso</td>
+            <td>UBA ILAB</td>
+            <td class="h-center">-</td>
+          </tr>
+      </tbody>
+  </table> 
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contacto {% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/contact-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1>Contacto</h1>
+<span class="subheading">¡Trabajemos juntos!</span>
+{% endblock %}
+
+{% block content %}
+<div class="row v-center" style="align-items: center">   
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Si desea hablar/contactarme, no dude en utilizar una de las siguientes posibilidades:</p>
+        <br>
+        <p><b>Teléfono:</b> +54 9 341 668 7584</p>
+        <p><b>E-mail:</b><a href="mailto:agustinguarmes@gmail.com" target="_blank" class="contacto" > agustinguarmes@gmail.com</a></p>
+        <p><b>Linkedin:</b><a href="https://www.linkedin.com/in/agustin-guarmes/" class="contacto" target="_blank"> Agustin Guarmes</a></p>
+    </div>
+    <div class="col-lg-4 col-md-10 mx-auto">
+        <form method="POST" action= {% url 'contacta' %} class="form_contact" id="form">
+            {% csrf_token %}
+          <h3>Pongámonos en contacto</h3>
+          {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{message}}
+                </div>
+            {% endfor %}
+          {% endif %}
+          <div class="form-group">
+              <input type="text" name="txtNombre" id="txtNombre" placeholder="Nombre" class="form-control" required>
+          </div>
+          <div class="form-group">
+              <input type="text" name="txtCorreo" id="txtCorreo" placeholder="Ingrese su correo electrónico" class="form-control" required>
+          </div>
+          <div class="form-group">
+              <textarea type="text" name="message" id="message" placeholder="Tu mensaje" class="form-control" required></textarea>
+          </div>
+          <div class="form-group">
+              <input type="submit" class="btn btn-success">
+              <input type="reset" class="btn btn-primary">
+              <p class="warnings" id="warnings"></p>
+          </div>
+        </form>
+      </div>
+</div>
+
+
+{% endblock %}

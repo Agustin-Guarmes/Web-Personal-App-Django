@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Portafolio {% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/portfolio-bg.png' %}{% endblock %}
+
+{% block headers %}
+<h1>Portafolio</h1>
+<span class="subheading">Mis proyectos</span>
+{% endblock %}
+
+{% block content %}
+    {% for project in projects %}   <!--recorro la lista de proyectos-->
+        <!-- Proyectos -->
+        <div class="row project">  	
+            <div class="col-lg-3 col-md-4 offset-lg-1">
+                <img class="img-fluid" src="{{project.image.url}}" alt="proyecto2">  <!--cambio {% static 'core/img/about-bg.jpg' %} por {{project.image.url}}, el ultimo .url es para que tome la ruta-->
+            </div>
+            <div class="col-lg-7 col-md-8">
+                <h2 class="section-heading title">{{project.title}}</h2>   <!--cambio Segundo proyecto por {{project.title}}-->
+            <p>{{project.description}}</p>  <!--cambio la descripcion estatica por la dinamica-->
+            {% if project.link %}
+            <p><a href="{{project.link}}" target="_blank">Más información</a></p>
+            {% endif %}
+            </div>
+        </div>
+        <!-- con el for no necesito poner proyecto por proyecto, ya que recorre todos los project de proyects
+            Proyecto 1
+        <div class="row project">  	
+            <div class="col-lg-3 col-md-4 offset-lg-1">
+                <img class="img-fluid" src="{% static 'core/img/home-bg.jpg' %}" alt="proyecto1">
+            </div>
+            <div class="col-lg-7 col-md-8">
+                <h2 class="section-heading title">Primer proyecto</h2>   
+            <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm....</p>
+            <p><a href="http://google.com">Más información</a></p>
+            </div>
+        </div> -->
+    {% endfor %}
+{% endblock %}
